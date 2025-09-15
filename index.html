@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OBJ + SVG Rotation Marker</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+    #rotationMarkerContainer {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* SVG marker goes behind */
+    }
+    #canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* 3D OBJ canvas above marker */
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG container (JS injects the first alphabetic .svg from /rotation_marker) -->
+  <div id="rotationMarkerContainer"></div>
+
+  <!-- Canvas for OBJ rendering -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Scripts -->
+  <script src="rotation_marker.js"></script>
+  <script src="center_object.js"></script>
+</body>
+</html>
